@@ -29,7 +29,6 @@ import NotificationCenter from "@/components/notification-center"
 import NotificationBadge from "@/components/notification-badge"
 import ReminderService from "@/components/reminder-service"
 import { useNotifications } from "@/hooks/use-notifications"
-import { ThemeToggle } from "@/components/theme-toggle"
 import AttendanceTracker from "@/components/attendance-tracker"
 import PracticeTest from "@/components/practice-test"
 import RoleSelector from "@/components/role-selector"
@@ -323,8 +322,6 @@ export default function ClassScheduleApp() {
                 <p className="text-white/90 drop-shadow-lg">Manage your academic life efficiently</p>
               </div>
               <div className="flex items-center gap-2">
-                <ThemeToggle />
-
                 {/* Role-specific top buttons */}
                 {userRole === "teacher" ? (
                   <>

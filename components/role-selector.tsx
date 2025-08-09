@@ -67,31 +67,70 @@ export default function RoleSelector({ onRoleSelect }: RoleSelectorProps) {
     onRoleSelect("teacher", userData)
   }
 
+  // Updated classes to include both school and college levels
   const classes = [
+    // School Classes
     "Class 1A",
     "Class 1B",
+    "Class 1C",
     "Class 2A",
     "Class 2B",
+    "Class 2C",
     "Class 3A",
     "Class 3B",
+    "Class 3C",
     "Class 4A",
     "Class 4B",
+    "Class 4C",
     "Class 5A",
     "Class 5B",
+    "Class 5C",
     "Class 6A",
     "Class 6B",
+    "Class 6C",
     "Class 7A",
     "Class 7B",
+    "Class 7C",
     "Class 8A",
     "Class 8B",
+    "Class 8C",
     "Class 9A",
     "Class 9B",
+    "Class 9C",
     "Class 10A",
     "Class 10B",
+    "Class 10C",
     "Class 11A",
     "Class 11B",
+    "Class 11C",
     "Class 12A",
     "Class 12B",
+    "Class 12C",
+    // College Years
+    "1st Year - Computer Science",
+    "1st Year - Engineering",
+    "1st Year - Business",
+    "1st Year - Arts",
+    "1st Year - Science",
+    "1st Year - Medicine",
+    "2nd Year - Computer Science",
+    "2nd Year - Engineering",
+    "2nd Year - Business",
+    "2nd Year - Arts",
+    "2nd Year - Science",
+    "2nd Year - Medicine",
+    "3rd Year - Computer Science",
+    "3rd Year - Engineering",
+    "3rd Year - Business",
+    "3rd Year - Arts",
+    "3rd Year - Science",
+    "3rd Year - Medicine",
+    "4th Year - Computer Science",
+    "4th Year - Engineering",
+    "4th Year - Business",
+    "4th Year - Arts",
+    "4th Year - Science",
+    "4th Year - Medicine",
   ]
 
   return (
@@ -213,18 +252,31 @@ export default function RoleSelector({ onRoleSelect }: RoleSelectorProps) {
                 </div>
                 <div>
                   <Label htmlFor="studentClass" className="text-gray-700 font-medium">
-                    Class
+                    Class / Year
                   </Label>
                   <Select value={studentClass} onValueChange={setStudentClass}>
                     <SelectTrigger className="mt-1 border-2 focus:border-blue-500 shadow-sm">
-                      <SelectValue placeholder="Select your class" />
+                      <SelectValue placeholder="Select your class or year" />
                     </SelectTrigger>
-                    <SelectContent>
-                      {classes.map((cls) => (
-                        <SelectItem key={cls} value={cls}>
-                          {cls}
-                        </SelectItem>
-                      ))}
+                    <SelectContent className="max-h-60">
+                      <div className="px-2 py-1 text-sm font-semibold text-gray-500 border-b">School Classes</div>
+                      {classes
+                        .filter((cls) => cls.startsWith("Class"))
+                        .map((cls) => (
+                          <SelectItem key={cls} value={cls}>
+                            {cls}
+                          </SelectItem>
+                        ))}
+                      <div className="px-2 py-1 text-sm font-semibold text-gray-500 border-b border-t mt-2">
+                        College Years
+                      </div>
+                      {classes
+                        .filter((cls) => cls.includes("Year"))
+                        .map((cls) => (
+                          <SelectItem key={cls} value={cls}>
+                            {cls}
+                          </SelectItem>
+                        ))}
                     </SelectContent>
                   </Select>
                 </div>
