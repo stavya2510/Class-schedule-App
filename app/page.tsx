@@ -311,7 +311,7 @@ export default function ClassScheduleApp() {
             <div className="flex items-center justify-between">
               <div>
                 <div className="flex items-center gap-4 mb-2">
-                  <h1 className="text-4xl font-bold text-white drop-shadow-2xl">Class Schedule & Reminder</h1>
+                  <h1 className="text-white drop-shadow-2xl font-serif font-extrabold text-4xl">Class Schedule &amp; Reminder App </h1>
                   <Badge
                     variant={userRole === "teacher" ? "default" : "secondary"}
                     className="text-sm bg-white/20 backdrop-blur-sm border-white/30 text-white shadow-lg"
@@ -319,7 +319,7 @@ export default function ClassScheduleApp() {
                     {userRole === "teacher" ? "Teacher" : "Student"}: {currentUser?.name}
                   </Badge>
                 </div>
-                <p className="text-white/90 drop-shadow-lg">Manage your academic life efficiently</p>
+                <p className="text-white/90 drop-shadow-lg leading-8 tracking-wider text-2xl">Manage your academic life efficiently</p>
               </div>
               <div className="flex items-center gap-2">
                 {/* Role-specific top buttons */}
